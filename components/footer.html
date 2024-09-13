@@ -6,12 +6,31 @@
     <title>footer</title>
     <style>
         /* you can put some style or put in style.css */
+        #footer {
+            display: flex;
+            justify-content: center;
+            box-sizing: border-box;
+            padding: 1rem;
+            a {
+                margin-right: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
 
+    <div id="footer">
+        <span>
+            <a href="">Privacy Policy</a>
+            <a href="">terms of service</a>
+        </span>
+        <span>&nbsp;&copy;</span>
+    </div>
 </body>
 <script type="module">
     // you can put some js code
+    const year = document.createElement('span')
+    year.innerHTML = new Date().getFullYear()
+    document.querySelector('#footer').appendChild(year)
 </script>
 </html>

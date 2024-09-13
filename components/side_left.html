@@ -9,9 +9,19 @@
     </style>
 </head>
 <body>
-
+    <h2>Side</h2>
+    <a href="/" data-i18n-key="back">back</a>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
 </body>
 <script type="module">
     // you can put some js code
+    console.log(translate)
+    const li = document.createElement('li');
+    li.innerHTML = '+++';
+    document.querySelector('ul').appendChild(li)
 </script>
 </html>
