@@ -1,8 +1,13 @@
+import { i18nContentRender } from './i18n.js';
+
 export function loadFetch(dom, url) {
     fetch(url)
     .then(response => response.text())
     .then(data => {
         dom.innerHTML = data;
+
+        i18nContentRender(dom.querySelectorAll('body *'));
+
         const scripts = dom.querySelectorAll('script');
         scripts.forEach(script => {
             const newScript = document.createElement('script');
