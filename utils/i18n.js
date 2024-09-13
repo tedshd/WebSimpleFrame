@@ -1,6 +1,5 @@
-import {getQueryString} from './querystring.js';
+import { getQueryString } from './querystring.js';
 
-// TODO add support i18n lang
 const locales = {
   'en-US': '../locale/en-US.json',
   'zh-TW': '../locale/zh-TW.json'
@@ -36,4 +35,32 @@ export async function i18n(language) {
     }
   }
   return { getLangKey };
+}
+
+/**
+ *
+ * @param {*} domScope
+ * this is for i18n content render
+ * use in loadFetch & html content load
+ * avoid call before i18n()
+ */
+export function i18nContentRender(domScope) {
+  domScope.forEach((item, index) => {
+    let key = item.getAttribute('data-i18n-key');
+    let value = item.getAttribute('data-i18n-value');
+    let placeholder = item.getAttribute('data-i18n-placeholder');
+    let title = item.getAttribute('data-i18n-title');
+    if (key) {
+      item.innerText = window.translate.getLangKey(key);
+    }
+    if (value) {
+      item.setAttribute('value', window.translate.getLangKey(value));
+    }
+    if (placeholder) {
+      item.setAttribute('placeholder', window.translate.getLangKey(placeholder));
+    }
+    if (title) {
+      item.setAttribute('title', window.translate.getLangKey(title));
+    }
+  })
 }
