@@ -1,4 +1,4 @@
-import {getQueryString} from './querystring.js';
+import { getQueryString } from './querystring.js';
 
 const locales = {
   'en-US': '../locale/en-US.json',
@@ -46,17 +46,21 @@ export async function i18n(language) {
  */
 export function i18nContentRender(domScope) {
   domScope.forEach((item, index) => {
-      let key = item.getAttribute('data-i18n-key');
-      let value = item.getAttribute('data-i18n-value');
-      let placeholder = item.getAttribute('data-i18n-placeholder');
-      if (key) {
+    let key = item.getAttribute('data-i18n-key');
+    let value = item.getAttribute('data-i18n-value');
+    let placeholder = item.getAttribute('data-i18n-placeholder');
+    let title = item.getAttribute('data-i18n-title');
+    if (key) {
       item.innerText = window.translate.getLangKey(key);
-      }
-      if (value) {
+    }
+    if (value) {
       item.setAttribute('value', window.translate.getLangKey(value));
-      }
-      if (placeholder) {
+    }
+    if (placeholder) {
       item.setAttribute('placeholder', window.translate.getLangKey(placeholder));
-      }
+    }
+    if (title) {
+      item.setAttribute('title', window.translate.getLangKey(title));
+    }
   })
 }

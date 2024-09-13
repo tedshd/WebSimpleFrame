@@ -97,3 +97,23 @@ translate.getLangKey('current_page', {
     "current_page": "This is page {current_index}"
 }
 ```
+
+If want to use i18n in HTML DOM
+
+HTML DOM attriubte can add
+
+* `data-i18n-key`
+* `data-i18n-title`
+* `data-i18n-value`
+* `data-i18n-placeholder`
+
+example
+
+```html
+
+<span data-i18n-key="current_page">this page</span>
+
+<input type="text" data-i18n-value="user_name" data-i18n-placeholder="input_here" value="">
+
+<button data-i18n-title="tip" title="" data-i18n-key="click_btn">Click</button>
+```
