@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header></header>
+  <main>
+    <section id="side_left"></section>
+    <section></section>
+  </main>
+  <footer></footer>
+</body>
+<script type="module">
+  import { initialize } from "./script.js";
+  (async () => {
+    await initialize();
+
+    loadFetch(document.querySelector('header'), 'components/header.html');
+    loadFetch(document.querySelector('#side_left'), 'components/side_left.html');
+    loadFetch(document.querySelector('footer'), 'components/footer.html');
+  })();
+
+</script>
+
+</html>
