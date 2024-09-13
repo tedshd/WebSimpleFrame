@@ -23,13 +23,5 @@
     const li = document.createElement('li');
     li.innerHTML = '+++';
     document.querySelector('ul').appendChild(li)
-    const doms = document.querySelectorAll('*');
-    doms.forEach((item, index) => {
-        let key = doms[index].getAttribute('data-i18n-key');
-        console.log(key);
-        if (key) {
-            doms[index].innerText = translate.getLangKey(key);
-        }
-    })
 </script>
 </html>

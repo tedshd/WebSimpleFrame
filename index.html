@@ -12,7 +12,9 @@
   <header></header>
   <main class="holy_grail_body">
     <section id="side_left"></section>
-    <section></section>
+    <section>
+      <div data-i18n-key="content" >content</div>
+    </section>
   </main>
   <footer></footer>
 </body>
@@ -24,8 +26,7 @@
     loadFetch(document.querySelector('header'), 'components/header.html');
     loadFetch(document.querySelector('#side_left'), 'components/side_left.html');
     loadFetch(document.querySelector('footer'), 'components/footer.html');
+
   })();
-
 </script>
-
 </html>
