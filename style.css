@@ -1,0 +1,14 @@
+body, html {
+    padding: 0;
+    margin: 0;
+}
+
+.holy_grail {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    .holy_grail_body {
+        display: flex;
+        flex: 1;
+    }
+}

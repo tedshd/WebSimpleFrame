@@ -11,3 +11,7 @@ export async function initialize() {
   const translate = await i18n();
   window.translate = translate;
 }
+
+window.addEventListener('load', () => {
+
+})
