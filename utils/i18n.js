@@ -1,4 +1,4 @@
-import { getQueryString } from './querystring.js';
+import { getQueryString } from './utils.js';
 
 const locales = {
   'en-US': '../locale/en-US.json',
